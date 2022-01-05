@@ -1,0 +1,22 @@
+<H1>Listado</H1>
+
+<div *ngIf=" deletedHero !== '...'; else noDeletedHero ">
+    <h3>
+        Deleted hero <small>{{ deletedHero }}</small>
+    </h3>
+</div>
+
+<ng-template #noDeletedHero>
+
+</ng-template>
+
+
+<button (click)=" deleteHero() ">Delete last hero</button>
+
+<ul>
+    <li *ngFor="let hero of heros; let i = index">
+        {{ i + 1 }} {{ hero}}
+    </li>
+</ul>
+
+
